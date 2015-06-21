@@ -12,7 +12,7 @@ var retryStrategy = function (err, response) {
 };
 
 module.exports.controller = function (app) {
-
+  setInterval(function () {
     request({
         url: amazonApiOptions.recentlyAdded,
         method: 'GET',
@@ -89,7 +89,7 @@ module.exports.controller = function (app) {
                     }
                 });
             });
-
         }
     });
+  }, (1000*60*60*12));
 };
