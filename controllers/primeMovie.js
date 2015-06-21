@@ -12,7 +12,7 @@ var retryStrategy = function (err, response) {
 };
 
 module.exports.controller = function (app) {
-
+  setInterval(function () {
     for (var movieUrl in config.amazonApi.movies) {
         if (config.amazonApi.movies.hasOwnProperty(movieUrl)) {
             request({
@@ -96,4 +96,5 @@ module.exports.controller = function (app) {
             });
         }
     }
+  }, 30000);
 };
