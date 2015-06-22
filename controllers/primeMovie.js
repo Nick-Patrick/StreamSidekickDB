@@ -8,7 +8,11 @@ var amazonApiOptions = config.amazonApi;
 var omdbApiOptions = config.omdbApi;
 
 var retryStrategy = function (err, response) {
-    return err || response.statusCode === 502 || response.body.results.length === 0;
+    var  resultsLength = 0;
+    if (response && response.body) {
+      resultsLength = response.body.results ? response.body.results.length : 0;
+    }
+    return err || response.statusCode === 502 || resultsLength === 0;
 };
 
 module.exports.controller = function (app) {
@@ -63,7 +67,7 @@ module.exports.controller = function (app) {
                                             if (error) {
                                                 console.log(error);
                                             }
-                                            if (data.length === 0) {
+                                            if (data && data.length === 0) {
                                                 movieEntry = new primeMovie({
                                                     title: body.Title,
                                                     description: body.Plot,
@@ -96,5 +100,5 @@ module.exports.controller = function (app) {
             });
         }
     }
-  }, 1000*60*60*12);
+  }, 10000);//1000*60*60*12);
 };
