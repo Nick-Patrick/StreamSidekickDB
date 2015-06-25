@@ -90,5 +90,5 @@ module.exports.controller = function (app) {
             });
         }
     });
-  }, 10000);// 1000*60*60*12);
+  }, 1000*60*60*12);
 };
