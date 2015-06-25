@@ -55,7 +55,6 @@ module.exports.controller = function (app) {
                              return;
                         } else {
                           try {
-                              console.log(body);
                               movieEntry = primeRecentlyAdded.find({"title": body.Title, "year": body.Year}, function (error, data) {
                                   if (error) {
                                       console.log(error);

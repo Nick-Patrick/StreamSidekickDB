@@ -21,7 +21,7 @@ config.amazonApi = {
     }
 };
 config.omdbApi = {
-    movieByTitleYear: 'http://www.omdbapi.com/?tomatoes=true&plot=short&r=json&t='
+    movieByTitleYear: 'http://www.omdbapi.com/?tomatoes=true&plot=full&r=json&t='
 };
 
 module.exports = config;
