@@ -79,7 +79,7 @@ module.exports.controller = function (app) {
                                                     runtime: body.Runtime,
                                                     director: body.Director,
                                                     actors: body.Actors,
-                                                    metascore: body.Metascore,
+                                                    metascore: body.Metascore, 
                                                     imdbRating: body.imdbRating,
                                                     rottenMeter: body.tomatoRotten,
                                                     poster: body.Poster,
