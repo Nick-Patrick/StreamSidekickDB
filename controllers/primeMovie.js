@@ -40,6 +40,7 @@ module.exports.controller = function (app) {
                     body['results'].forEach(function (movie) {
                         var strippedMovieTitle = movie.title.replace(/ *\([^)]*\) */g, ""); //strip anything between '()'
                         strippedMovieTitle = strippedMovieTitle.replace(/ *\[[^)]*\] */g, ""); //strip anything between '[]'
+                        var dateNow = new Date();
 
                         console.log(omdbApiOptions.movieByTitleYear + strippedMovieTitle + (movie.year ? '&y=' + movie.year : ''));
                         request({
@@ -81,7 +82,8 @@ module.exports.controller = function (app) {
                                                     metascore: body.Metascore,
                                                     imdbRating: body.imdbRating,
                                                     rottenMeter: body.tomatoRotten,
-                                                    poster: body.Poster
+                                                    poster: body.Poster,
+                                                    updated: dateNow
                                                 });
                                                 movieEntry.save();
                                                 console.log('success');
