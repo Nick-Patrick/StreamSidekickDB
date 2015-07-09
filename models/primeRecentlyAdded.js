@@ -44,6 +44,12 @@ var primeRecentlyAdded = new Schema({
     recentlyAdded: {
         type: Boolean,
         default: false
+    },
+    vendor: {
+      type: String
+    },
+    updated: {
+      type: Date
     }
 });
 
