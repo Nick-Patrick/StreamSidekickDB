@@ -58,7 +58,7 @@ module.exports.controller = function (app) {
                           try {
                               movieEntry = primeRecentlyAdded.find({"title": body.Title, "year": body.Year}, function (error, data) {
                                   if (error) {
-                                      console.log(error);
+                                      console.log(error, movieEntry);
                                   }
                                   if (data.length === 0) {
                                       movieEntry = new primeRecentlyAdded({
@@ -76,10 +76,11 @@ module.exports.controller = function (app) {
                                           rottenMeter: body.tomatoRotten,
                                           poster: body.Poster,
                                           recentlyAdded: true,
+                                          vendor: 'AmazonPrime',
                                           updated: dateNow
                                       });
                                       movieEntry.save();
-                                      console.log('success');
+                                      console.log('success', movieEntry);
                                   }
                               });
 
