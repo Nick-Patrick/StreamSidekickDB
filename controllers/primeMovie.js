@@ -83,6 +83,7 @@ module.exports.controller = function (app) {
                                                     imdbRating: body.imdbRating,
                                                     rottenMeter: body.tomatoRotten,
                                                     poster: body.Poster,
+                                                    imdbId: body.imdbID,
                                                     vendor: 'AmazonPrime',
                                                     recentlyAdded: false,
                                                     updated: dateNow
@@ -104,5 +105,5 @@ module.exports.controller = function (app) {
             });
         }
     }
-  }, 10000);
+  }, 1000*60*60*4);
 };

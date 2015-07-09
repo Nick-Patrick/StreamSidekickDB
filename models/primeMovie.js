@@ -45,6 +45,9 @@ var primeMovies = new Schema({
         type: Boolean,
         default: false
     },
+    imdbId: {
+      type: String
+    },
     vendor: {
       type: String
     },

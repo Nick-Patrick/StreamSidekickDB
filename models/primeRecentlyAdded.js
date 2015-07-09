@@ -41,6 +41,9 @@ var primeRecentlyAdded = new Schema({
     poster: {
         type: String
     },
+    imdbId: {
+      type: String
+    },
     recentlyAdded: {
         type: Boolean,
         default: false
