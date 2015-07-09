@@ -84,7 +84,7 @@ module.exports.controller = function (app) {
                                                     rottenMeter: body.tomatoRotten,
                                                     poster: body.Poster,
                                                     vendor: 'AmazonPrime',
-                                                    recentlyAdded: false
+                                                    recentlyAdded: false,
                                                     updated: dateNow
                                                 });
                                                 movieEntry.save();
@@ -104,5 +104,5 @@ module.exports.controller = function (app) {
             });
         }
     }
-  }, 20000);
+  }, 1000*60*60*12);
 };
