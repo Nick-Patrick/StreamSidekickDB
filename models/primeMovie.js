@@ -48,6 +48,10 @@ var primeMovies = new Schema({
     imdbId: {
       type: String
     },
+    trailers: [{
+      videoType: String,
+      videoKey: String
+    }],
     vendor: {
       type: String
     },

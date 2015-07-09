@@ -51,6 +51,10 @@ var primeRecentlyAdded = new Schema({
     vendor: {
       type: String
     },
+    trailers: [{
+      videoType: String,
+      videoKey: String 
+    }],
     updated: {
       type: Date
     }

@@ -23,5 +23,10 @@ config.amazonApi = {
 config.omdbApi = {
     movieByTitleYear: 'http://www.omdbapi.com/?tomatoes=true&plot=full&r=json&t='
 };
+config.tmdb = {
+    apiKey: '3edb07345471e21e10122850427cbf57',
+    movieByImdbId: 'https://api.themoviedb.org/3/find/',
+    movieByMovieId: 'https://api.themoviedb.org/3/movie/'
+}
 
 module.exports = config;
