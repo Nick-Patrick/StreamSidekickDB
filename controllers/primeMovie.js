@@ -67,13 +67,13 @@ module.exports.controller = function (app) {
                                 getMovieTrailers(omdbMovieBody.imdbID, omdbMovieBody);
                             }
                           });
-                        }, timer += 3000);
+                        }, timer += 8000);
                       });
                   }
               });
             }
           }
-        }, 1000 * 60 * 60 * 4);
+        }, 1000 * 60 * 60 * 12);
 
 
   getMovieTrailers = function(imdbID, omdbMovieBody) {

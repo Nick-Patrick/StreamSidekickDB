@@ -60,11 +60,11 @@ module.exports.controller = function (app) {
                       getRecentMovieTrailers(omdbMovieBody.imdbID, omdbMovieBody);
                   }
                 });
-              }, timer += 3000);
+              }, timer += 6000);
             });
         }
     });
-  }, 1000 * 60 * 60 * 4);
+  }, 1000 * 60 * 60 * 12);
 
   getRecentMovieTrailers = function(imdbID, omdbMovieBody) {
     try {
